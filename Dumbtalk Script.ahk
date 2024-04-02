@@ -28,11 +28,16 @@ Hotstring("EndChars", "-()[]{}:;`"/\,.?!`n`s`t")
 ;------------------------------------------------------------------------------
 ; Order matters: Hotstrings in Includes at the bottom have a higher priority
 
+; Helper Files
+FileInstall "verbList.csv", "verbList.csv", 1
+FileInstall "settings.ini", "settings.ini", 1
+
 ; Utils
 #Include %A_ScriptDir%\SubScripts\Utils\Initializer.ahk
 #Include %A_ScriptDir%\SubScripts\Utils\Functions.ahk
 
 ; Speech Modules
+#Include %A_ScriptDir%\SubScripts\SpeechModules\CommonMistakes.ahk
 #Include %A_ScriptDir%\SubScripts\SpeechModules\ContractionsFormal.ahk
 #Include %A_ScriptDir%\SubScripts\SpeechModules\ContractionsInformal.ahk
 #Include %A_ScriptDir%\SubScripts\SpeechModules\Pronouns.ahk
@@ -45,4 +50,5 @@ Hotstring("EndChars", "-()[]{}:;`"/\,.?!`n`s`t")
 #Include %A_ScriptDir%\SubScripts\SpeechModules\Punctuation.ahk
 #Include %A_ScriptDir%\SubScripts\SpeechModules\SentencesInsertions.ahk
 
-
+sleep 5000
+reload
