@@ -3,15 +3,17 @@
 ;------------------------------------------------------------------------------
 ; Replaces common words with simpler or more bimbo-like versions. (ie. "best" => "bestest", "confused" => "ditzy"...)
 
-loadWordReplacer(state) {
-	if (toBool(state) == true) {
+loadWordReplacer(state,chance) {
+	local Var := Random(1, 100)
+
+	if (toBool(state) == true and Var <= chance) {
 		Hotstring("::okay", "okie")
 		Hotstring("::ok", "okie")
 		Hotstring("::oki", "okie")
 		Hotstring("::delicious", "yummy")
 		Hotstring("::tasty", "yummy")
 		Hotstring("::best", "bestest")
-		Hotstring("::better", "bettah")
+		Hotstring("::better", "bettur")
 		Hotstring("::god", "gawd")
 		Hotstring("::wow", "oh gawd")
 		Hotstring("::hot", "hawt")
@@ -30,7 +32,9 @@ loadWordReplacer(state) {
 		Hotstring("::though", "tho")
 		Hotstring("::through", "thru")
 		Hotstring("::thanks", "thankies")
-		hotstring("::whatever", "whatevz")
+		Hotstring("::whatever", "whatevz")
 		Hotstring("reset")
 	}
+
 }
+

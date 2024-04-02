@@ -3,8 +3,10 @@
 ;------------------------------------------------------------------------------
 ; Replaces common laugh sounds (haha, lol, etc...) with *giggles*
 
-loadGiggles(state) {
-	if (toBool(state) == true) {
+loadGiggles(state,chance) {
+        local Var := Random(1, 100)
+
+	if (toBool(state) == true and Var <= chance) {
 		Hotstring("::hehe", "*giggles*")
 		Hotstring("::haha", "*giggles*")
 		Hotstring("::*laughs*", "*giggles*")

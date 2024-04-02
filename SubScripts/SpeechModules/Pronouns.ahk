@@ -4,8 +4,11 @@
 ; Forces you to refer to yourself as Bambi (ie. "I" => "Bambi", "My" => "Bambi's"...)
 
 
-loadPronouns(state, nameReplace, pronounReplace) {
-	if (toBool(state) == true) {
+loadPronouns(state, nameReplace, pronounReplace,chance) {
+        local Var := Random(1, 100)
+
+
+	if (toBool(state) == true and Var <= chance) {
 		Hotstring("::me", sendName)
 		Hotstring("::do i", sendName.Bind( , "does "))
 		Hotstring("::am i", sendName.Bind( , "is "))

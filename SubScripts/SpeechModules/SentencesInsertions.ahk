@@ -5,7 +5,7 @@
 ; Horny Thoughts: Inserts some horny thoughts (ie. "... *god bambi is horny*...") from time to time (less common than hesitation marks)
 
 ; Script had some issues and weirdness with random insertion, so it had to only be allowed after some specific words
-loadHesitationsAndHornyThoughts(state) {
+loadHesitationsAndHornyThoughts(state,hesitationMarksChance,hornyThoughtsChance) {
 	Hotstring(":b0z*:and ", insertHesitationsAndHornyThoughts)
 	Hotstring(":b0z*:to ", insertHesitationsAndHornyThoughts)
 	Hotstring(":b0z?*:, ", insertHesitationsAndHornyThoughts)

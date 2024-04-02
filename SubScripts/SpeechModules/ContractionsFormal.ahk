@@ -3,8 +3,10 @@
 ;------------------------------------------------------------------------------
 ; aren't, could've, how're, etc...
 
-loadContractionsFormal(state) {
-	if (toBool(state) == true) {
+loadContractionsFormal(state,chance) {
+        local Var := Random(1, 100)
+
+	if (toBool(state) == true and Var <= chance) {
 		; Generic
 		Hotstring "::must have", "must've"
 		Hotstring("::could have", "could've")

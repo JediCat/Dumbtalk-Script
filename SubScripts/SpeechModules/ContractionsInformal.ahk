@@ -3,8 +3,10 @@
 ;------------------------------------------------------------------------------
 ; aint, aint, gonna, wanna, etc... (will override some formal contractions)
 
-loadContractionsInformal(state) {
-	if (toBool(state) == true) {
+loadContractionsInformal(state,chance) {
+        local Var := Random(1, 100)
+
+	if (toBool(state) == true and Var <= chance) {
 		; Generic negations
 		Hotstring(":z:am not", "aint")
 		Hotstring(":z:is not", "aint")

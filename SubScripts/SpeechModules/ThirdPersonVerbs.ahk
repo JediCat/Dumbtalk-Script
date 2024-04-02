@@ -26,7 +26,7 @@ loadVerbsFromCSV() {
 	return replacements
 }
 
-load3rdPersonVerbs(state, nameReplace) {
+load3rdPersonVerbs(state, nameReplace,chance) {
 	verbList := loadVerbsFromCSV()
 	Loop(verbList.Length) {
 		pair := verbList[A_Index]
@@ -35,7 +35,9 @@ load3rdPersonVerbs(state, nameReplace) {
 		Hotstring(":z:" . nameReplace . " " . triggerVerb, nameReplace . " " replacement)
 	}
 
-	if (toBool(state) == true) {
+        local Var := Random(1, 100)
+
+	if (toBool(state) == true and Var < chance) {
 		Hotstring(":z: am", " is")
 		Hotstring(":z: have", " has")
 		Hotstring(":z:i'm", nameReplace . " is")

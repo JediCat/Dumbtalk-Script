@@ -3,8 +3,10 @@
 ;------------------------------------------------------------------------------
 ; Replaces some words from a pool of more fitting synonyms. (like world replacer, but with several possible outcome)
 
-loadWordsRandomizer(state) {
-	if (toBool(state) == true) {
+loadWordsRandomizer(state,chance) {
+        local Var := Random(1, 100)
+
+	if (toBool(state) == true and Var <= chance) {
 		
 	Hotstring(":z*:yes", randomString.Bind(, "yis|yas|yus|yes", 4))
 	
