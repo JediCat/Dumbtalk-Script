@@ -5,17 +5,18 @@
 
 ; Hotstring("EndChars", "-()[]`{}:;" "/\,.?!`n `t")
 
-loadContractionsFormal(formalContractions)
-loadContractionsInformal(informalContractions)
-loadPronouns(renameMode, nameReplace, possessivePronoun)
-loadGiggles(giggles)
-loadWordReplacer(wordReplacer)
-load3rdPersonVerbs(renameMode, nameReplace)
-loadWordsRandomizer(wordsRandomizer)
-loadPhonetic(phonetic)
+loadCommonMistakes(CommonMistakes,CommonMistakesChance)
+loadContractionsFormal(formalContractions,formalContractionsChance)
+loadContractionsInformal(informalContractions,formalContractionsChance)
+loadPronouns(renameMode, nameReplace, possessivePronoun, renameModeChance)
+loadGiggles(giggles,gigglesChance)
+loadWordReplacer(wordReplacer,wordReplacerChance)
+load3rdPersonVerbs(renameMode, nameReplace, renameModeChance)
+loadWordsRandomizer(wordsRandomizer,wordsRandomizerChance)
+loadPhonetic(phonetic,phoneticChance)
 loadVerbsSynonyms(verbsSynonyms, nameReplace)
-loadPunctuation(punctuation)
+loadPunctuation(punctuation,punctuationChance)
 if (hesitationMarks or hornyThoughts) {
-	loadHesitationsAndHornyThoughts(true)
+	loadHesitationsAndHornyThoughts(true,hesitationMarksChance,hornyThoughtsChance)
 }
 ; thoughtsBetweenWords(true) ; Doesn't work
